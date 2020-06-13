@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Course, sortCoursesBySeqNo } from '../model/course';
 import { CoursesStore } from './../services/courses.store';
 import { MessagesService } from './../messages/messages.service';
@@ -22,6 +22,7 @@ import { CourseDialogComponent } from '../course-dialog/course-dialog.component'
   selector: 'home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent implements OnInit {
   beginnerCourses$: Observable<Course[]>;
